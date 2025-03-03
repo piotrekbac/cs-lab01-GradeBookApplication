@@ -113,23 +113,45 @@ namespace GradeBook.GradeBooks
                 }
             }
         }
-
+        //Aktualizacja metody "GetGPA" przyjmującej dwa parametry: "letterGrade" typu "char" oraz "studentType" typu "StudentType", zwracającej wartość typu double.
         public virtual double GetGPA(char letterGrade, StudentType studentType)
         {
+            //Dodanie zmiennej "gpa" typu double, przypisanie wartości 0.
+            var gpa = 0;
+
+            //Instrukcja switch, która sprawdza wartość zmiennej "letterGrade".
             switch (letterGrade)
             {
+                //Jeżeli wartość zmiennej "letterGrade" to 'A', to przypisz do zmiennej "gpa" wartość 4.
                 case 'A':
-                    return 4;
+                    gpa = 4;
+                    break;
+                //Jeżeli wartość zmiennej "letterGrade" to 'B', to przypisz do zmiennej "gpa" wartość 3.
                 case 'B':
-                    return 3;
+                    gpa = 3;
+                    break;
+                //Jeżeli wartość zmiennej "letterGrade" to 'C', to przypisz do zmiennej "gpa" wartość 2.
                 case 'C':
-                    return 2;
+                    gpa = 2;
+                    break;
+                //Jeżeli wartość zmiennej "letterGrade" to 'D', to przypisz do zmiennej "gpa" wartość 1.
                 case 'D':
-                    return 1;
+                    gpa = 1;
+                    break;
+                //Jeżeli wartość zmiennej "letterGrade" to 'F', to przypisz do zmiennej "gpa" wartość 0.
                 case 'F':
-                    return 0;
+                    gpa = 0;
+                    break;
             }
-            return 0;
+
+            //Sprawdzenie czy wartość zmiennej "IsWeighted" to "true" oraz czy wartość zmiennej "studentType" to "Honors" lub "DualEnrolled".
+            if (IsWeighted && (studentType == StudentType.Honors || studentType == StudentType.DualEnrolled))
+            {
+                //Zwiększenie wartości zmiennej "gpa" o 1.
+                gpa++;
+            }
+            //Zwrócenie wartości zmiennej "gpa".
+            return gpa;
         }
 
         public virtual void CalculateStatistics()
