@@ -31,17 +31,45 @@ namespace GradeBook.UserInterfaces
                 Console.WriteLine("{0} was not recognized, please try again.", command);
         }
 
+        //Operację które teraz będę przeprowadzał, będą miały miejsce w metodzie "CreateCommand" w klasie "StartingUserInterface". "CreateCommand" przyjmuje parametr "command" typu string.
         public static void CreateCommand(string command)
         {
+            //Tworzenie tablicy "parts" przy użyciu metody "Split" na obiekcie "command" z separatorem " ' ' ".
             var parts = command.Split(' ');
+            //Sprawdzenie czy długość tablicy "parts" jest różna od 3, jeżeli tak to wyświetlany jest komunikat o treści: "Command not valid, Create requires a name and type of gradebook".
             if (parts.Length != 3)
             {
-                Console.WriteLine("Command not valid, Create requires a name and type of gradebook");
+                Console.WriteLine("Command not valid, Create requires a name and type of gradebook.");
                 return;
             }
+            //Przypisanie wartości "name" jako drugi element tablicy "parts".
             var name = parts[1];
-            BaseGradeBook gradeBook = new BaseGradeBook(name);
+            //Przypisanie wartości "type" jako trzeci element tablicy "parts" z małymi literami, w celu właściwej interpretacji przypadków z sekcji switch.
+            var type = parts[2].ToLower();
+
+            //Utworzenie zmiennej "gradeBook" typu "BaseGradeBook".
+            BaseGradeBook gradeBook; 
+
+            //Instrukcja switch, która sprawdza wartość zmiennej "type".
+            switch (type)
+            {
+                //Jeżeli wartość zmiennej "type" to "standard", to przypisz do zmiennej "gradeBook" nowy obiekt klasy "StandardGradeBook" z parametrem "name".
+                case "standard": 
+                    gradeBook = new StandardGradeBook(name);
+                    break;
+                //Jeżeli wartość zmiennej "type" to "ranked", to przypisz do zmiennej "gradeBook" nowy obiekt klasy "RankedGradeBook" z parametrem "name".
+                case "ranked":
+                    gradeBook = new RankedGradeBook(name);
+                    break;
+                //Jeżeli wartość zmiennej "type" to żadna z powyższych, to wyświetl komunikat o treści: "This is not a supported type of gradebook, please try again", po tym następuje wyjście z metody.
+                default:
+                    Console.WriteLine($"{type} is not a supported type of gradebook, please try again");
+                    return;
+            }
+
+            //Wyświetlenie komunikatu o treści: "Created gradebook {0}.", gdzie "{0}" to wartość zmiennej "name".
             Console.WriteLine("Created gradebook {0}.", name);
+            //Wywołanie metody "CommandLoop" z klasy "GradeBookUserInterface" z parametrem "gradeBook", powoduje to uruchomienie pętli głównej programu dla utworzonego dziennika ocen. 
             GradeBookUserInterface.CommandLoop(gradeBook);
         }
 
