@@ -12,6 +12,8 @@ namespace GradeBook.GradeBooks
     public class BaseGradeBook
     {
         public string Name { get; set; }
+
+        //Dodawanie nowej własciowści "Type" do klasy "BaseGradeBook" typu "GradeBookType", modyfikator dostępu "public".
         public GradeBookType Type { get; set; }
         
         public List<Student> Students { get; set; }
