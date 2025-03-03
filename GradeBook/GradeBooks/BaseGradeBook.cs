@@ -22,9 +22,11 @@ namespace GradeBook.GradeBooks
         
         public List<Student> Students { get; set; }
 
-        public BaseGradeBook(string name)
+        public BaseGradeBook(string name, bool isWeighted)
         {
             Name = name;
+            //Poprawne przypisanie wartości IsWeighted do własciwości "IsWeighted" na podstawie przekazywanego parametru "IsWeighted".
+            IsWeighted = isWeighted;
             Students = new List<Student>();
         }
 

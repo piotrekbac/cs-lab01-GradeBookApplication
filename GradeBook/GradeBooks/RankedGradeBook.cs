@@ -9,7 +9,8 @@ namespace GradeBook.GradeBooks
     {
         /*Tworzenie konstruktora "RankedGradeBook" przyjmującego parametr "name" typu string, wywołującego konstruktor klasy bazowej z parametrem "name" oraz 
         przypiującego wartość "Type" jako "GradeBookType.Ranked".*/
-        public RankedGradeBook(string name) : base(name)
+        //Aktualizujemy konstruktor klasy "RankedGradeBook" dodając parametr "isWeighted" typu bool jako drugi parametr oraz wywołując konstruktor klasy bazowej z dwoma parametrami.
+        public RankedGradeBook(string name, bool isWeighted) : base(name, isWeighted)
         {
             Type = GradeBookType.Ranked;
         }
