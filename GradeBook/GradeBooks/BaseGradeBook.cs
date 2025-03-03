@@ -9,12 +9,16 @@ using Newtonsoft.Json.Linq;
 
 namespace GradeBook.GradeBooks
 {
-    public class BaseGradeBook
+    //Nadajemy wartość abstrakcyjną klasie "BaseGradeBook".
+    public abstract class BaseGradeBook
     {
         public string Name { get; set; }
 
         //Dodawanie nowej własciowści "Type" do klasy "BaseGradeBook" typu "GradeBookType", modyfikator dostępu "public".
         public GradeBookType Type { get; set; }
+
+        //Dodawanie nowej własciowści "IsWeighted" do klasy "BaseGradeBook" typu "bool", modyfikator dostępu "public".
+        public bool IsWeighted { get; set; }
         
         public List<Student> Students { get; set; }
 
