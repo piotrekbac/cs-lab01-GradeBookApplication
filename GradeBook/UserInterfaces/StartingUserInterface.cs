@@ -65,6 +65,18 @@ namespace GradeBook.UserInterfaces
                 case "ranked":
                     gradeBook = new RankedGradeBook(name, isWeighted);
                     break;
+                case "wsei":
+                    gradeBook = new WseiGradeBook(name, isWeighted);
+                    break;
+                case "esnu":
+                    gradeBook = new ESNUGradeBook(name, isWeighted);
+                    break;
+                case "one2four":
+                    gradeBook = new OneToFourGradeBook(name, isWeighted);
+                    break;
+                case "sixPoint":
+                    gradeBook = new SixPointGradeBook(name, isWeighted);
+                    break;
                 //Jeżeli wartość zmiennej "type" to żadna z powyższych, to wyświetl komunikat o treści: "This is not a supported type of gradebook, please try again", po tym następuje wyjście z metody.
                 default:
                     Console.WriteLine($"{type} is not a supported type of gradebook, please try again");

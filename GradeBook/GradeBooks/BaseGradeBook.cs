@@ -35,6 +35,8 @@ namespace GradeBook.GradeBooks
             if (string.IsNullOrEmpty(student.Name))
                 throw new ArgumentException("A Name is required to add a student to a gradebook.");
             Students.Add(student);
+            //Wywołanie metody Save() służy automatycznemu zapisywaniu po dodaniu ucznia. 
+            Save();
         }
 
         public void RemoveStudent(string name)
@@ -48,6 +50,8 @@ namespace GradeBook.GradeBooks
                 return;
             }
             Students.Remove(student);
+            //Wywołanie metody Save() służy automatycznemu zapisywaniu po usunięciu ucznia.
+            Save();
         }
 
         public void AddGrade(string name, double score)
@@ -61,6 +65,8 @@ namespace GradeBook.GradeBooks
                 return;
             }
             student.AddGrade(score);
+            //Wywołanie metody Save() służy automatycznemu zapisywaniu po dodaniu oceny.
+            Save();
         }
 
         public void RemoveGrade(string name, double score)
@@ -74,6 +80,8 @@ namespace GradeBook.GradeBooks
                 return;
             }
             student.RemoveGrade(score);
+            //Wywołanie metody Save() służy automatycznemu zapisywaniu po usunięciu oceny.
+            Save();
         }
 
         public void ListStudents()

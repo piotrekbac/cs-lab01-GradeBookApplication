@@ -65,7 +65,7 @@ namespace GradeBook.GradeBooks
             //Sprawdzenie czy liczba studentów wynosi 5, jeżeli jest ona mniejsza niż 5, to zostanie wyświetlony komunikat "Ranked grading requires at least 5 students.".
             if (Students.Count < 5)
             {
-                Console.WriteLine("anked grading requires at least 5 students.");
+                Console.WriteLine("Ranked grading requires at least 5 students.");
                 return;
             }
             //Wywołanie metody "CalculateStudentStatistics" z parametrem name, z klasy bazowej jezeli liczba studentów wynosi 5 lub więcej.

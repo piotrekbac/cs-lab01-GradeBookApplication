@@ -11,6 +11,8 @@ namespace GradeBook.Enums
         Ranked,
         ESNU, 
         OneToFour, 
-        SixPoint
+        SixPoint,
+        //Dodanie nowej wartości "Wsei" do typu wyliczeniowego "GradeBookType".
+        Wsei
     }
 }
