@@ -7,6 +7,7 @@ namespace GradeBook
     {
         static void Main(string[] args)
         {
+            //Zadanie - Piotr Bacior - 15 722 - Informatyka stosowana - I rok - WSEI Kraków
             Console.WriteLine("#=======================#");
             Console.WriteLine("# Welcome to GradeBook! #");
             Console.WriteLine("#=======================#");
