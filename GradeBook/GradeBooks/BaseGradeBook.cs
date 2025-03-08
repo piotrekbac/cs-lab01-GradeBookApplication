@@ -12,6 +12,7 @@ namespace GradeBook.GradeBooks
     //Nadajemy wartość abstrakcyjną klasie "BaseGradeBook".
     public abstract class BaseGradeBook
     {
+        public GradeBookType Type { get; set; }
         public string Name { get; set; }
 
         //Dodawanie nowej własciowści "Type" do klasy "BaseGradeBook" typu "GradeBookType", modyfikator dostępu "public".
@@ -28,6 +29,7 @@ namespace GradeBook.GradeBooks
             //Poprawne przypisanie wartości IsWeighted do własciwości "IsWeighted" na podstawie przekazywanego parametru "IsWeighted".
             IsWeighted = isWeighted;
             Students = new List<Student>();
+
         }
 
         public void AddStudent(Student student)
