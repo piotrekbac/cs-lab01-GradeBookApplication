@@ -12,7 +12,6 @@ namespace GradeBook.GradeBooks
     //Nadajemy wartość abstrakcyjną klasie "BaseGradeBook".
     public abstract class BaseGradeBook
     {
-        public GradeBookType Type { get; set; }
         public string Name { get; set; }
 
         //Dodawanie nowej własciowści "Type" do klasy "BaseGradeBook" typu "GradeBookType", modyfikator dostępu "public".

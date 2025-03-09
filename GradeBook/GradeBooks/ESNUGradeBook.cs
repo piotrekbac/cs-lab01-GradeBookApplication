@@ -9,7 +9,7 @@ namespace GradeBook.GradeBooks
         //Tworzenie konstruktora "ESNUGradeBook" przyjmującego parametr "name" typu string, wywołującego konstruktor klasy bazowej z parametrem "name" oraz drugim parametrem "isWeighted", przypisującego wartość "Type" jako "GradeBookType.Wsei".
         public ESNUGradeBook(string name, bool isWeighted) : base(name, isWeighted)
         {
-            Type = GradeBookType.Wsei;
+            Type = GradeBookType.ESNU;
         }
         //Nadpisywanie metody "GetLetterGrade" przyjmującej parametr "averageGrade" typu double, zwracającej wartość typu char.
         public override char GetLetterGrade(double averageGrade)
